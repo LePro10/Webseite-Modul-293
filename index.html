@@ -1,49 +1,62 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="de">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hotel Booking</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking | Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
     <header>
         <h1>Hotel Booking</h1>
+        <nav>
+            <a hreäf="index.html">Home</a> |
+            <a href="formular.html">Buchung</a>
+        </nav>
     </header>
-    <br />
+
     <main>
-        <p>
-            Welcome to our hotel booking website. Here you can find the best deals
-            for your stay!
+        <p class="intro-text">
+            Willkommen bei dem Hotel Booking Portal. Finden Sie die besten Angebote für Ihren Aufenthalt!
         </p>
+
+        <section class="hotel-container">
+            <article class="hotel-card">
+                <h2>Hotel 1</h2>
+                <ul>
+                    <li>Einzelzimmer - $100/Nacht</li>
+                    <li>Doppelzimmer - $150/Nacht</li>
+                </ul>
+                <a href="formular.html" class="book-button">Book Now</a>
+            </article>
+
+            <article class="hotel-card">
+                <h2>Hotel 2</h2>
+                <ul>
+                    <li>Einzelzimmer - $120/Nacht</li>
+                    <li>Doppelzimmer - $150/Nacht</li>
+                </ul>
+                <a href="formular.html" class="book-button">Book Now</a>
+            </article>
+
+            <article class="hotel-card">
+                <h2>Hotel 3</h2>
+                <ul>
+                    <li>Einzelzimmer - $120/Nacht</li>
+                    <li>Doppelzimmer - $150/Nacht</li>
+                </ul>
+                <a href="formular.html" class="book-button">Book Now</a>
+            </article>
+        </section>
     </main>
-    <br />
-    <section>
-        <div>
-            <h2>Hotel 1</h2>
-            <ul>
-                <li>Single Room - $100/night</li>
-                <li>Double Room - $150/night</li>
-                <li>Suite - $250/night</li>
-                <li>
-                    <a href="formular.html" class="book-link">Book Now</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <h2>Hotel 2</h2>
-            <ul>
-                <li>Single Room - $120/night</li>
-                <li>Double Room - $150/night</li>
-                <li>Suite - $250/night</li>
-            </ul>
-        </div>
-    </section>
+
     <footer>
         <p>&copy; 2026 Hotel Booking</p>
     </footer>
+
 </body>
 
 </html>
