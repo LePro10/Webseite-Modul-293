@@ -1,62 +1,101 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Booking | Home</title>
+    <title>Hotel Booking | Startseite</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <header>
-        <h1>Hotel Booking</h1>
-        <nav>
-            <a hreäf="index.html">Home</a> |
-            <a href="formular.html">Buchung</a>
-        </nav>
+        <div class="header-inner">
+            <h1>Hotel Booking</h1>
+            <nav aria-label="Hauptnavigation">
+                <a href="index.html">Home</a>
+                <a href="formular.html">Buchung</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <p class="intro-text">
-            Willkommen bei dem Hotel Booking Portal. Finden Sie die besten Angebote für Ihren Aufenthalt!
-        </p>
+        <section class="hero">
+            <h2>Dein Aufenthalt beginnt hier</h2>
+            <p>Wähle ein Zimmer, wähle einen Termin und buche deinen Traumurlaub in nur wenigen Schritten.</p>
+        </section>
 
         <section class="hotel-container">
             <article class="hotel-card">
-                <h2>Hotel 1</h2>
+                <h3>Hotel 1</h3>
                 <ul>
-                    <li>Einzelzimmer - $100/Nacht</li>
-                    <li>Doppelzimmer - $150/Nacht</li>
+                    <li>Einzelzimmer - 100€/Nacht</li>
+                    <li>Doppelzimmer - 150€/Nacht</li>
                 </ul>
-                <a href="formular.html" class="book-button">Book Now</a>
+                <img src="media/hotel images/Hotel_1.jpg" alt="Bild von Hotel 1" class="hotel-image">
+                <a class="button" href="formular.html">Book Now</a>
             </article>
 
             <article class="hotel-card">
-                <h2>Hotel 2</h2>
+                <h3>Hotel 2</h3>
                 <ul>
-                    <li>Einzelzimmer - $120/Nacht</li>
-                    <li>Doppelzimmer - $150/Nacht</li>
+                    <li>Einzelzimmer - 120€/Nacht</li>
+                    <li>Doppelzimmer - 150€/Nacht</li>
                 </ul>
-                <a href="formular.html" class="book-button">Book Now</a>
+                <img src="media/hotel images/Hotel_2.jpg" alt="Bild von Hotel 2" class="hotel-image">
+                <a class="button" href="formular.html">Book Now</a>
             </article>
 
             <article class="hotel-card">
-                <h2>Hotel 3</h2>
+                <h3>Hotel 3</h3>
                 <ul>
-                    <li>Einzelzimmer - $120/Nacht</li>
-                    <li>Doppelzimmer - $150/Nacht</li>
+                    <li>Einzelzimmer - 120€/Nacht</li>
+                    <li>Doppelzimmer - 150€/Nacht</li>
                 </ul>
-                <a href="formular.html" class="book-button">Book Now</a>
+                <img src="media/hotel images/Hotel_3.jpg" alt="Bild von Hotel 3" class="hotel-image">
+                <a class="button" href="formular.html">Book Now</a>
+            </article>
+        </section>
+
+        <section class="media">
+            <article class="media-item">
+                <h3>Hotel-Rundgang</h3>
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A"
+                        title="YouTube Video" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </article>
+
+            <article class="media-item">
+                <h3>Unsere Lage</h3>
+                <div class="map-wrapper">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.999016508278!2d2.2922926156743427!3d48.85837307928772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc0c9aaacb7%3A0x3c1ba0415f4274a5!2sEiffelturm!5e0!3m2!1sde!2sch!4v1700000000000!5m2!1sde!2sch"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </article>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Hotel Booking</p>
+        <div class="footer-inner">
+            <section class="footer-links">
+                <h4>Mehr erfahren</h4>
+                <ul>
+                    <li><a href="https://www.booking.com" target="_blank" rel="noopener">Booking.com</a></li>
+                    <li><a href="https://www.tripadvisor.de" target="_blank" rel="noopener">TripAdvisor</a></li>
+                    <li><a href="mailto:info@hotelbooking.example.com" target="_blank">E-Mail schreiben</a></li>
+                    <li><a href="tel:+498912345678" target="_blank">Anrufen</a></li>
+                </ul>
+            </section>
+            <section class="footer-info">
+                <p>&copy; 2026 Hotel Booking</p>
+            </section>
+        </div>
     </footer>
-
 </body>
 
 </html>
