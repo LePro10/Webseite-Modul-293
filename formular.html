@@ -11,7 +11,7 @@
     <header>
       <div class="header-inner">
         <h1>Reservierung</h1>
-        <nav aria-label="Hauptnavigation">
+        <nav>
           <a href="index.html">Home</a>
           <a href="formular.html">Buchung</a>
         </nav>
@@ -37,20 +37,6 @@
               required
               pattern="[A-Za-zÄÖÜäöüß\s]+"
               maxlength="30"
-              size="30"
-              autofocus
-            />
-
-            <label for="lastname">Nachname</label>
-            <input
-              type="text"
-              id="lastname"
-              name="lastname"
-              placeholder="Mustermann"
-              required
-              pattern="[A-Za-zÄÖÜäöüß\s]+"
-              maxlength="30"
-              size="30"
             />
 
             <label for="email">E-Mail</label>
@@ -60,7 +46,6 @@
               name="email"
               placeholder="max@beispiel.de"
               required
-              size="30"
             />
 
             <label for="phone">Telefon</label>
@@ -70,8 +55,6 @@
               name="phone"
               placeholder="+49 170 1234567"
               pattern="^\+?[0-9\s\-]{7,20}$"
-              minlength="7"
-              maxlength="20"
               required
             />
           </fieldset>
@@ -109,128 +92,13 @@
               value="2"
               required
             />
-
-            <fieldset>
-              <legend>Zimmerkategorie</legend>
-              <label
-                ><input
-                  type="radio"
-                  name="room"
-                  value="standard"
-                  checked
-                  required
-                />
-                Standard</label
-              >
-              <label
-                ><input type="radio" name="room" value="suite" required />
-                Suite</label
-              >
-              <label
-                ><input type="radio" name="room" value="penthouse" required />
-                Penthouse</label
-              >
-            </fieldset>
-
-            <label for="view">Aussicht</label>
-            <select id="view" name="view" required>
-              <option value="">Bitte wählen</option>
-              <option value="stadt">Stadt</option>
-              <option value="berg">Berge</option>
-              <option value="meer">Meer</option>
-            </select>
-
-            <label for="promo">Promocode</label>
-            <input
-              type="text"
-              id="promo"
-              name="promo"
-              placeholder="SUMMER2026"
-              maxlength="10"
-              size="20"
-            />
-          </fieldset>
-
-          <fieldset>
-            <legend>Sicherheit & Extras</legend>
-
-            <label for="password">Passwort</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Mind. 8 Zeichen"
-              minlength="8"
-              maxlength="20"
-              required
-            />
-
-            <label
-              ><input type="checkbox" name="newsletter" value="yes" />
-              Newsletter erhalten</label
-            >
-            <label
-              ><input type="checkbox" name="terms" value="accepted" required />
-              Ich habe die AGB gelesen</label
-            >
-
-            <label for="reference">Buchungsreferenz</label>
-            <input
-              type="text"
-              id="reference"
-              name="reference"
-              value="HOTEL-2026-0001"
-              readonly
-            />
-
-            <label for="note">Wunsch / Notiz</label>
-            <input
-              type="text"
-              id="note"
-              name="note"
-              placeholder="z. B. Allergie, frühe Anreise"
-              disabled
-            />
           </fieldset>
 
           <div class="form-actions">
             <button type="submit">Anfrage senden</button>
-            <button type="reset" disabled>Zurücksetzen (deaktiviert)</button>
           </div>
         </form>
       </article>
     </main>
-
-    <footer>
-      <div class="footer-inner">
-        <section class="footer-links">
-          <h4>Mehr erfahren</h4>
-          <ul>
-            <li>
-              <a href="https://www.booking.com" target="_blank" rel="noopener"
-                >Booking.com</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.tripadvisor.de"
-                target="_blank"
-                rel="noopener"
-                >TripAdvisor</a
-              >
-            </li>
-            <li>
-              <a href="mailto:info@hotelbooking.example.com" target="_blank"
-                >E-Mail schreiben</a
-              >
-            </li>
-            <li><a href="tel:+498912345678" target="_blank">Anrufen</a></li>
-          </ul>
-        </section>
-        <section class="footer-info">
-          <p>&copy; 2026 Hotel Booking</p>
-        </section>
-      </div>
-    </footer>
   </body>
 </html>
