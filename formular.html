@@ -1,104 +1,125 @@
 ﻿<!doctype html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hotel Booking | Reservierung</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <header>
-      <div class="header-inner">
-        <h1>Reservierung</h1>
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="formular.html">Buchung</a>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Booking | Reservierung</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <main>
-      <article class="booking">
-        <h2>Jetzt buchen</h2>
-        <form
-          action="https://gibm.becknet.ch/formular/formular.php"
-          method="post"
-        >
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>Reservierung</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="formular.html">Buchung</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="booking">
+      <h2>Jetzt buchen</h2>
+      <form action="https://gibm.becknet.ch/formular/formular.php" method="post">
+        <fieldset>
+          <legend>Kontakt</legend>
+
+          <label for="firstname">Vorname</label>
+          <input type="text" id="firstname" name="firstname" placeholder="Max Mustermann" required
+            pattern="[A-Za-zÄÖÜäöüß\s]+" maxlength="30" />
+
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" placeholder="max@mustermann.de" required />
+
+          <label for="phone">Telefon</label>
+          <input type="tel" id="phone" name="phone" placeholder="+49 170 1234567" pattern="^\+?[0-9\s\-]{7,20}$"
+            required />
+        </fieldset>
+
+        <fieldset>
+          <legend>Aufenthalt</legend>
+
+          <label for="arrival">Anreisedatum</label>
+          <input type="date" id="arrival" name="arrival" required value="2026-04-01" min="2026-04-01" />
+
+          <label for="departure">Abreisedatum</label>
+          <input type="date" id="departure" name="departure" required value="2026-04-05" min="2026-04-02" />
+
+          <label for="guests">Gäste</label>
+          <input type="number" id="guests" name="guests" min="1" max="6" value="2" required />
+
+          <label for="roomtype">Zimmerkategorie</label>
+          <select id="roomtype" name="roomtype" required>
+            <option value="">-- Bitte wählen --</option>
+            <option value="standard">Standard Zimmer</option>
+            <option value="comfort">Comfort Zimmer</option>
+            <option value="suite">Suite</option>
+            <option value="deluxe">Deluxe Zimmer</option>
+          </select>
+
           <fieldset>
-            <legend>Kontakt</legend>
-
-            <label for="firstname">Vorname</label>
-            <input
-              type="text"
-              id="firstname"
-              name="firstname"
-              placeholder="Max"
-              required
-              pattern="[A-Za-zÄÖÜäöüß\s]+"
-              maxlength="30"
-            />
-
-            <label for="email">E-Mail</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="max@beispiel.de"
-              required
-            />
-
-            <label for="phone">Telefon</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="+49 170 1234567"
-              pattern="^\+?[0-9\s\-]{7,20}$"
-              required
-            />
+            <legend>Zusatzleistungen</legend>
+            <div class="checkbox-group">
+              <input type="checkbox" id="breakfast" name="extras" value="breakfast" />
+              <label for="breakfast">Frühstück inklusive</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="parking" name="extras" value="parking" />
+              <label for="parking">Parkplatz</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="wifi" name="extras" value="wifi" />
+              <label for="wifi">WLAN Premium</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="spa" name="extras" value="spa" />
+              <label for="spa">Spa Zugang</label>
+            </div>
           </fieldset>
+        </fieldset>
 
-          <fieldset>
-            <legend>Aufenthalt</legend>
+        <fieldset>
+          <legend>Kundenkonto</legend>
 
-            <label for="arrival">Anreisedatum</label>
-            <input
-              type="date"
-              id="arrival"
-              name="arrival"
-              required
-              value="2026-04-01"
-              min="2026-04-01"
-            />
+          <label for="username">Benutzername</label>
+          <input type="text" id="username" name="username" placeholder="Benutzername" pattern="[A-Za-z0-9]+"
+            minlength="3" />
 
-            <label for="departure">Abreisedatum</label>
-            <input
-              type="date"
-              id="departure"
-              name="departure"
-              required
-              value="2026-04-05"
-              min="2026-04-02"
-            />
+          <label for="password">Passwort</label>
+          <input type="password" id="password" name="password" placeholder="Mindestens 8 Zeichen" minlength="8" />
+        </fieldset>
 
-            <label for="guests">Gäste</label>
-            <input
-              type="number"
-              id="guests"
-              name="guests"
-              min="1"
-              max="6"
-              value="2"
-              required
-            />
-          </fieldset>
+        <div class="form-actions">
+          <button type="submit">Anfrage senden</button>
+        </div>
+      </form>
+    </article>
+  </main>
 
-          <div class="form-actions">
-            <button type="submit">Anfrage senden</button>
-          </div>
-        </form>
-      </article>
-    </main>
-  </body>
+  <footer>
+    <div class="footer-inner">
+      <section class="footer-links">
+        <h4>Mehr erfahren</h4>
+        <ul>
+          <li>
+            <a href="https://www.booking.com" target="_blank" rel="noopener">Booking.com</a>
+          </li>
+          <li>
+            <a href="https://www.tripadvisor.de" target="_blank" rel="noopener">TripAdvisor</a>
+          </li>
+          <li>
+            <a href="mailto:info@hotelbooking.example.com">E-Mail schreiben</a>
+          </li>
+          <li><a href="tel:+498912345678">Anrufen</a></li>
+        </ul>
+      </section>
+      <section class="footer-info">
+        <p>&copy; 2026 Hotel Booking</p>
+      </section>
+    </div>
+  </footer>
+</body>
+
 </html>
