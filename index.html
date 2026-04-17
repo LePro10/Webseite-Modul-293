@@ -1,33 +1,40 @@
 ﻿<!doctype html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="This is my Website for the BBZBL Module: 'Modul-293', where i learned how to create Websites like this." />
   <title>Hotel Booking | Startseite</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- HEADER -->
   <header>
     <div class="header-inner">
       <h1>Hotel Booking</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="formular.html">Buchung</a>
-      </nav>
+      <button class="menu-toggle" id="menuToggle">☰</button>
     </div>
   </header>
 
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="formular.html">Buchung</a>
+      </div>
+    </div>
+  </nav>
+
   <main>
+    <!-- HERO -->
     <section class="hero">
       <h2>Dein Aufenthalt beginnt hier</h2>
-      <p>
-        Wähle ein <strong>Zimmer</strong>, wähle einen Termin und buche deinen Traumurlaub in
-        nur wenigen Schritten.
-      </p>
+      <p>Wähle ein <strong>Zimmer</strong>, wähle einen Termin und buche deinen Traumurlaub.</p>
     </section>
 
+    <!-- HOTELS -->
     <section class="hotel-container">
       <article class="hotel-card">
         <h3>Hotel 1</h3>
@@ -35,7 +42,7 @@
           <li>Einzelzimmer - 100€/Nacht</li>
           <li>Doppelzimmer - 150€/Nacht</li>
         </ul>
-        <img src="media/hotel images/Hotel_1.jpg" alt="Bild von Hotel 1" class="hotel-image" />
+        <img src="media/hotel images/Hotel_1.webp" alt="Hotel 1" />
         <a class="button" href="formular.html">Book Now</a>
       </article>
 
@@ -45,7 +52,7 @@
           <li>Einzelzimmer - 120€/Nacht</li>
           <li>Doppelzimmer - 150€/Nacht</li>
         </ul>
-        <img src="media/hotel images/Hotel_2.jpg" alt="Bild von Hotel 2" class="hotel-image" />
+        <img src="media/hotel images/Hotel_2.webp" alt="Hotel 2" />
         <a class="button" href="formular.html">Book Now</a>
       </article>
 
@@ -55,55 +62,38 @@
           <li>Einzelzimmer - 120€/Nacht</li>
           <li>Doppelzimmer - 150€/Nacht</li>
         </ul>
-        <img src="media/hotel images/Hotel_3.jpg" alt="Bild von Hotel 3" class="hotel-image" />
+        <img src="media/hotel images/Hotel_3.webp" alt="Hotel 3" />
         <a class="button" href="formular.html">Book Now</a>
       </article>
     </section>
 
+    <!-- MEDIA -->
     <section class="media">
       <article class="media-item">
         <h3>Hotel-Rundgang</h3>
         <div class="video-wrapper">
-          <iframe width="1548" height="871" src="https://www.youtube.com/embed/FVdcsNJ9iqc"
-            title="Der komplette Hotel-Rundgang!" frameborder="0" allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share;
-              " referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/FVdcsNJ9iqc" title="Hotel-Rundgang" allowfullscreen></iframe>
         </div>
       </article>
 
       <article class="media-item">
         <h3>Unsere Lage</h3>
         <div class="map-wrapper">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.999016508278!2d2.2922926156743427!3d48.85837307928772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc0c9aaacb7%3A0x3c1ba0415f4274a5!2sEiffelturm!5e0!3m2!1sde!2sch!4v1700000000000!5m2!1sde!2sch"
-            width="560" height="315" style="border: 0" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.999016508278!2d2.2922926156743427!3d48.85837307928772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc0c9aaacb7%3A0x3c1ba0415f4274a5!2sEiffelturm!5e0!3m2!1sde!2sch!4v1700000000000!5m2!1sde!2sch" title="Unsere Lage" allowfullscreen></iframe>
         </div>
       </article>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <section class="footer-links">
         <h4>Mehr erfahren</h4>
         <ul>
-          <li>
-            <a href="https://www.booking.com" target="_blank" rel="noopener">Booking.com</a>
-          </li>
-          <li>
-            <a href="https://www.tripadvisor.de" target="_blank" rel="noopener">TripAdvisor</a>
-          </li>
-          <li>
-            <a href="mailto:info@hotelbooking.example.com">E-Mail schreiben</a>
-          </li>
-          <li><a href="tel:+498912345678">Anrufen</a></li>
+          <li><a href="https://www.booking.com" target="_blank">Booking.com</a></li>
+          <li><a href="https://www.tripadvisor.de" target="_blank">TripAdvisor</a></li>
+          <li><a href="mailto:info@hotelbooking.example.com">E-Mail</a></li>
         </ul>
       </section>
       <section class="footer-info">
@@ -111,6 +101,13 @@
       </section>
     </div>
   </footer>
-</body>
 
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.querySelector('nav');
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
 </html>

@@ -1,9 +1,9 @@
 ﻿<!doctype html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hotel Booking Reservierungsformular" />
   <title>Hotel Booking | Reservierung</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,14 +12,20 @@
   <header>
     <div class="header-inner">
       <h1>Reservierung</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="formular.html">Buchung</a>
-      </nav>
+      <button class="menu-toggle" id="menuToggle">☰</button>
     </div>
   </header>
 
-  <main>
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="formular.html">Buchung</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="formular">
     <article class="booking">
       <h2>Jetzt buchen</h2>
       <form action="https://gibm.becknet.ch/formular/formular.php" method="post">
@@ -120,6 +126,15 @@
       </section>
     </div>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.querySelector('nav');
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      menuToggle.textContent = nav.classList.contains('open') ? '✕' : '☰';
+    });
+  </script>
 </body>
 
 </html>

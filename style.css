@@ -1,158 +1,185 @@
-﻿:root {
-  --primary: #2196f3;
-  --primary-hover: #1976d2;
+/* ============================================
+   K7: LAYOUT - HOTEL BOOKING
+   Mobile-First mit CSS Grid + Flexbox
+   ============================================ */
+
+/* --- VARIABLEN --- */
+:root {
+  --primary: #07508c;
+  --primary-hover: #4099f1;
   --bg: #f5f7fa;
   --surface: #fff;
-  --text: #333;
-  --muted: #666;
   --border: #e0e0e0;
   --radius: 8px;
-  --max-width: 1000px;
+  --max-width: 1200px;
 }
-* {
-  box-sizing: border-box;
-}
+
+/* --- GRUNDEINSTELLUNGEN --- */
+* { box-sizing: border-box; }
+
 html {
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
 }
+
 body {
   margin: 0;
-  padding: 30px;
+  padding: 15px;
   background: var(--bg);
 }
-a {
-  color: var(--primary);
-  text-decoration: none;
-}
-header,
-footer {
+
+strong, b { font-weight: 700; color: var(--primary); }
+em, i { font-style: italic; }
+small { font-size: 0.85rem; }
+
+/* ============================================
+   1. HEADER
+   ============================================ */
+header {
   display: flex;
   justify-content: center;
-  padding: 30px 0;
+  margin-bottom: 15px;
 }
-.header-inner,
-.footer-inner {
+
+.header-inner {
   width: min(100%, var(--max-width));
-  padding: 30px;
+  max-width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  border-radius: var(--radius);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.header-inner h1 { margin: 0; font-size: 1.3rem; }
+
+/* ============================================
+   2. NAVIGATION
+   ============================================ */
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-inner {
+  width: min(100%, var(--max-width));
+  padding: 12px 15px;
   background: var(--surface);
   border-radius: var(--radius);
+  border: 1px solid var(--border);
+  justify-items: start;
 }
-.header-inner {
+
+.nav-links {
   display: flex;
+  gap: 10px;
   align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
-  color: var(--surface);
 }
-nav a {
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.2);
+
+.nav-links a {
+  padding: 8px 15px;
+  background: var(--primary);
   border-radius: var(--radius);
-  color: var(--surface);
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
 }
-nav a:hover {
-  background: rgba(255, 255, 255, 0.4);
-}
-footer .footer-inner {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.footer-links h4 {
-  margin: 0 0 10px;
-}
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.footer-links li {
-  margin-bottom: 5px;
-}
-.footer-info {
-  text-align: right;
-}
+
+.menu-toggle { display: none; }
+
+/* ============================================
+   3. MAIN - CSS GRID
+   ============================================ */
 main {
   max-width: var(--max-width);
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  gap: 15px;
+  grid-template-areas:
+    "header"
+    "nav"
+    "hero"
+    "hotels"
+    "media"
+    "footer";
 }
-.hero,
-.hotel-card,
-.media-item {
+
+/* Grid-Bereiche zuweisen */
+header    { grid-area: header; }
+nav       { grid-area: nav; }
+.hero     { grid-area: hero; }
+.hotel-container { grid-area: hotels; }
+.media    { grid-area: media; }
+footer    { grid-area: footer; }
+
+/* Formular-Seite */
+main.formular {
+  grid-template-areas:
+    "header"
+    "nav"
+    "booking"
+    "footer";
+}
+
+main.formular .booking { 
+  grid-area: booking;
+}
+
+/* Gleiche Styles */
+.hero, .hotel-card, .media-item, .booking {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 30px;
+  padding: 15px;
 }
-.hero h2,
-.hotel-card h3,
-.media-item h3 {
-  margin-top: 0;
+
+/* ============================================
+   4. HOTEL CONTAINER
+   ============================================ */
+.hotel-container {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr;
 }
-.hero p,
-.hotel-card ul {
-  color: var(--muted);
-  margin: 0;
+
+.hotel-card {
+  display: flex;
+  flex-direction: column;
 }
+
+.hotel-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin: 10px 0;
+}
+
 .hotel-card ul {
   list-style: none;
   padding: 0;
 }
-.hotel-card li {
-  margin-bottom: 5px;
-}
-.hotel-image {
-  width: 100%;
-  border-radius: var(--radius);
-  margin-bottom: 15px;
-}
-.hotel-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.hotel-card {
-  flex: 1 1 300px;
-}
-.button {
-  display: inline-block;
-  padding: 12px 24px;
-  background: var(--primary);
-  color: var(--surface);
-  border: none;
-  border-radius: var(--radius);
-  text-decoration: none;
-  cursor: pointer;
-}
-.button:hover {
-  background: var(--primary-hover);
-}
+
+/* ============================================
+   5. MEDIA
+   ============================================ */
 .media {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr;
 }
-.media-item {
-  flex: 1 1 0;
-  min-width: 300px;
-}
-.media-item h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-.video-wrapper,
-.map-wrapper {
+
+.media-item { padding: 15px; }
+
+.video-wrapper, .map-wrapper {
   position: relative;
   width: 100%;
   padding-top: 56.25%;
 }
-.video-wrapper iframe,
-.map-wrapper iframe {
+
+.video-wrapper iframe, .map-wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -160,94 +187,168 @@ main {
   height: 100%;
   border: 0;
 }
-.booking {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 30px;
-  width: 100%;
-}
-.booking h2 {
-  margin: 0 0 20px;
-}
-form {
+
+/* ============================================
+   6. FORMULAR
+   ============================================ */
+.booking { width: 100%; }
+
+.booking form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
-fieldset {
+
+.booking fieldset {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 15px;
   background: #fafafa;
 }
-legend {
+
+.booking legend {
   padding: 0 10px;
   font-weight: 600;
 }
-label {
+
+.booking label {
   display: block;
-  font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 5px;
 }
-input,
-select {
+
+.booking input, .booking select {
   width: 100%;
   padding: 10px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  font-size: 1rem;
 }
-input:focus,
-select:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
-}
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-.form-actions {
-  display: flex;
-  gap: 10px;
-}
-button {
-  padding: 12px 24px;
+
+.booking button {
+  padding: 10px 20px;
   background: var(--primary);
-  color: var(--surface);
+  color: white;
   border: none;
   border-radius: var(--radius);
-  font-size: 1rem;
-  font-weight: 600;
   cursor: pointer;
+  font-size: 1rem;
 }
-button:hover {
-  background: var(--primary-hover);
-}
+
 .checkbox-group {
   display: flex;
   align-items: center;
   gap: 10px;
   margin: 8px 0;
 }
-.checkbox-group input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+
+.checkbox-group input {
+  width: 18px;
+  height: 18px;
 }
-.checkbox-group label {
-  display: inline;
-  font-weight: 400;
+
+/* ============================================
+   7. BUTTON & FOOTER
+   ============================================ */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius);
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.button:hover {
+  background: var(--primary-hover);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.footer-inner {
+  width: min(100%, var(--max-width));
+  padding: 15px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 15px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
-fieldset fieldset {
-  border: none;
-  padding: 10px 0 0;
-  background: 0 0;
+
+.footer-links li { margin-bottom: 8px; }
+.footer-links a { color: var(--primary); }
+
+/* ============================================
+   RESPONSIVE - MOBILE FIRST
+   ============================================ */
+
+/* --- TABLET: 570px --- */
+@media (min-width: 570px) {
+  main { gap: 15px; }
+  .hotel-container {
+    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- TABLET GRÖSSER: 880px --- */
+@media (min-width: 880px) {
+  main { gap: 15px; }
+  .hotel-container {
+    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- DESKTOP: 992px --- */
+@media (min-width: 992px) {
+  body { padding: 20px; }
+  
+  .header-inner { padding: 20px; }
+  .header-inner h1 { font-size: 1.5rem; }
+  
+  .nav-inner { padding: 15px 20px; }
+  .nav-links { gap: 15px; }
+  .nav-links a { padding: 10px 20px; font-size: 1rem; }
+  
+  main { gap: 15px; }
+  
+  main {
+    grid-template-areas:
+      "header header"
+      "nav nav"
+      "hero hero"
+      "hotels hotels"
+      "media media"
+      "footer footer";
+  }
+  
+  .hotel-container {
+    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .hotel-card img { height: 200px; }
+  
+  .hero, .hotel-card, .media-item, .booking { padding: 25px; }
+  
+  .media {
+    gap: 25px;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .footer-inner {
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    padding: 20px;
+  }
 }
